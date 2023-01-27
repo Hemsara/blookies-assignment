@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,500;1,600&family=Poppins:wght@200;300;400;500&display=swap");
+$primary-color: #fff4eb;
+$secondary-color: #964b00;
+
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  ::selection {
+    background: $secondary-color;
+    color: white;
+  }
+}
+section {
+  height: 100vh;
+  padding: 60px;
+}
+.hero {
+  background-color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 7em;
+    font-family: "Cormorant Garamond", serif;
+  }
+  .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: #b69373;
+    }
+    .cta {
+      margin-top: 50px;
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
+button {
+  cursor: pointer;
+  transition-duration: 0.5s;
+  color: $secondary-color;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: transparent;
+  padding: 10px 35px;
+  border: 1px solid $secondary-color;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.styled_heading {
+  font-size: 2.5em;
+  font-family: "Cormorant Garamond", serif;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 50%; /* position the top  edge of the element at the middle of the parent */
+    left: 23%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 150px;
+    height: 3px;
+    background-color: black;
+  }
+}
+.products {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  .content {
+    width: 100%;
+  }
+  .list {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.product {
+  cursor: pointer;
+  transition-duration: 0.5s;
+  width: 340px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+
+  img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+  }
+
+  h4 {
+    margin-top: 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.3em;
+  }
+  p {
+    margin-bottom: 20px;
+    margin-top: 5px;
+    color: $secondary-color;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+  background-color: #fcfcfc;
+  height: 30vh;
+  border-bottom: 4px solid $secondary-color;
+  .footer_right {
+    display: flex;
+    gap: 100px;
+  }
+  .footer_col {
+    form {
+      display: flex;
+      margin-top: 10px;
+      height: 40px;
+      input {
+        width: 170px;
+        font-size: 0.65em;
+        height: 100%;
+        padding: 0px 10px;
+        border-radius: 5px 0px 0px 5px;
+        border: 1px solid rgb(234, 234, 234);
+
+        &::placeholder {
+          color: rgb(196, 196, 196);
+          font-weight: 300;
+        }
+      }
+      button {
+        height: 100%;
+        background-color: $secondary-color;
+        color: white;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.7em;
+        border-radius: 0px 5px 5px 0px;
+        padding: 0px 13px;
+      }
+    }
+    h6 {
+      font-size: 0.75em;
+    }
+    ul {
+      li {
+        cursor: pointer;
+        color: rgb(154, 154, 154);
+        font-weight: 300;
+        margin-top: 8px;
+        font-size: 0.74em;
+      }
+    }
+  }
+  .logo {
+    object-fit: cover;
+    height: 33px;
+  }
+
+  p {
+    font-size: 0.62em;
+    font-weight: 300;
+    color: rgb(177, 177, 177);
+  }
+  .socials {
+    margin-top: 25px;
+    display: flex;
+    gap: 14px;
+  }
+  .social_icon {
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    color: $secondary-color;
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    background-color: $primary-color;
+    transition-duration: 0.5s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+.footer_toggle {
+  display: none;
+}
+
+//-----
+.footer_ul {
+  display: unset;
+}
+.footer_ul_toggled {
+  display: block;
+}
+@media only screen and (max-width: 1025px) {
+  .info {
+    text-align: center;
+    padding: 60px 20px;
+
+    .cen {
+      div {
+        h4 {
+          margin-top: 60px;
+        }
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      width: 100%;
+      flex-direction: column !important;
+    }
+    height: auto;
+  }
+
+  .footer_ul {
+    display: none;
+  }
+  .footer_toggle {
+    display: block;
+  }
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    .left_content {
+      margin-top: 80px;
+    }
+  }
+  .features {
+    flex-wrap: wrap;
+  }
+  .about {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+
+    .about_content {
+      width: auto;
+      margin-top: 50px;
+
+      span {
+        justify-content: center;
+      }
+    }
+  }
+
+  .footer {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .footer_left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer_col {
+      span {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        a {
+          cursor: pointer;
+          transition: 0.7s ease all;
+        }
+      }
+      display: flex;
+
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: start;
+      text-align: left;
+    }
+
+    .footer_right {
+      width: 100%;
+      gap: 30px;
+      flex-direction: column;
+    }
+  }
+}
