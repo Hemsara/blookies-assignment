@@ -13,6 +13,38 @@ $secondary-color: #964b00;
     color: white;
   }
 }
+.about {
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .left,
+    .right {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .bg {
+        position: relative;
+      }
+
+      p {
+        color: grey;
+        font-weight: 300;
+        margin-top: 20px;
+        font-size: 0.9em;
+        line-height: 1.8em;
+      }
+    }
+  }
+  img {
+    width: 540px;
+    height: 550px;
+    object-fit: cover;
+  }
+}
 section {
   height: 100vh;
   padding: 60px;
@@ -25,6 +57,24 @@ section {
 
   h1 {
     font-size: 7em;
+    span {
+      font-family: "Cormorant Garamond", serif;
+      // background-color: $secondary-color;
+      border: 2px solid $secondary-color;
+      color: $secondary-color;
+      padding: 0px 24px;
+      margin-right: 5px;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "25";
+        font-size: 0.1em;
+        font-family: "Poppins", sans-serif;
+        right: 6px;
+        top: 6px;
+      }
+    }
     font-family: "Cormorant Garamond", serif;
   }
   .content {
@@ -35,6 +85,7 @@ section {
     align-items: center;
 
     p {
+      margin-top: 20px;
       color: #b69373;
     }
     .cta {
@@ -45,6 +96,10 @@ section {
   }
 }
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   cursor: pointer;
   transition-duration: 0.5s;
   color: $secondary-color;
@@ -125,8 +180,8 @@ button {
 .footer {
   display: flex;
   justify-content: space-between;
-  padding: 100px;
-  background-color: #fcfcfc;
+  padding: 60px;
+  background-color: #fffcfa;
   height: 30vh;
   border-bottom: 4px solid $secondary-color;
   .footer_right {
@@ -305,5 +360,53 @@ button {
       gap: 30px;
       flex-direction: column;
     }
+  }
+}
+
+.target {
+  position: absolute;
+
+  .circle {
+    cursor: pointer;
+    animation-name: animate;
+    animation-iteration-count: infinite;
+    animation-duration: 0.8s;
+    animation-direction: alternate-reverse;
+
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.226);
+    display: grid;
+    border-radius: 100%;
+    border: 2px solid white;
+    backdrop-filter: blur(40px);
+    place-items: center;
+    color: white;
+  }
+  .t_content {
+    position: absolute;
+    width: 400px;
+    top: -50%;
+
+    padding: 20px;
+    background-color: white;
+    border: 1px solid rgb(232, 232, 232);
+
+    h1 {
+      font-size: 0.8em;
+    }
+    p {
+      margin: 0 !important;
+      font-size: 0.7em !important;
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
   }
 }
