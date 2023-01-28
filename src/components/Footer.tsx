@@ -16,7 +16,7 @@ export const Footer = () => {
           width={100}
           height={50}
         /> */}
-        <p>For every cause that deserves contribution!</p>
+        <p>It's real magic! Try it. Feel it</p>
         <div className={ 'socials'}>
           <div className={ 'social_icon'}>
             <BsInstagram size={10} />
