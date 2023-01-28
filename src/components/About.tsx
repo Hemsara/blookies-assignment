@@ -49,10 +49,10 @@ interface TargetProps {
 
 const Target: React.FC<TargetProps> = ({ x, y, left }) => {
   const [visible, setVisible] = useState(false);
-  function MouseOver(event) {
+  function MouseOver(event : any) {
     setVisible(true);
   }
-  function MouseOut(event) {
+  function MouseOut(event : any) {
     setVisible(false);
   }
 
